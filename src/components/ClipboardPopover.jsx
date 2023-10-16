@@ -48,6 +48,7 @@ export default function ClipboardPopover({ style }) {
                             </svg>
                             Import Image
                         </button>
+                        <input type="file"/>
                     </div>
                 </PopoverBody>
             </PopoverContent>
