@@ -106,7 +106,7 @@ function App() {
               </svg>
             </button>
           </div>
-          <div className='bg-[#f00] h-full grow m-2 relative w-full'>
+          <div className='h-full grow m-2 relative w-full'>
             {
               arts.map((art) => {
                 return (
@@ -121,7 +121,7 @@ function App() {
                     minHeight={190}
                     bounds="window"
                   >
-                    <img src={art} />
+                    <img src={art.src} />
                   </Rnd>
                 )
               })
