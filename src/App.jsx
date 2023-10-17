@@ -8,10 +8,11 @@ import ShareDialog from './components/ShareDialog';
 import ArtBoardDialog from './components/ArtBoardDialog';
 import PatternMakerPopup from './components/PatternMakerPopup';
 import useDataContext from './context/useDataContext';
+import { Rnd } from 'react-rnd';
 
 function App() {
 
-  const { artBoards, setArtBoards } = useDataContext();
+  const { artBoards, setArtBoards, arts, setArts } = useDataContext();
 
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false);
   const [newArtboardOpen, setNewArtboardOpen] = useState(false);
@@ -104,6 +105,27 @@ function App() {
                 <path d="M21.6501 33.5L15.5001 27.35C15.3334 27.1833 15.2084 27 15.1251 26.8C15.0417 26.6 15.0001 26.3916 15.0001 26.175C15.0001 25.9583 15.0417 25.75 15.1251 25.55C15.2084 25.35 15.3334 25.1666 15.5001 25L21.2501 19.275L19.3751 17.4C19.1584 17.1833 19.0459 16.925 19.0376 16.625C19.0292 16.325 19.1334 16.0583 19.3501 15.825C19.5667 15.5916 19.8334 15.475 20.1501 15.475C20.4667 15.475 20.7417 15.5916 20.9751 15.825L30.1501 25C30.3167 25.1666 30.4376 25.35 30.5126 25.55C30.5876 25.75 30.6251 25.9583 30.6251 26.175C30.6251 26.3916 30.5876 26.6 30.5126 26.8C30.4376 27 30.3167 27.1833 30.1501 27.35L24.0001 33.5C23.8334 33.6666 23.6501 33.7916 23.4501 33.875C23.2501 33.9583 23.0417 34 22.8251 34C22.6084 34 22.4001 33.9583 22.2001 33.875C22.0001 33.7916 21.8167 33.6666 21.6501 33.5ZM22.8251 20.85L17.4751 26.2H28.1751L22.8251 20.85ZM32.8001 34C32.2001 34 31.6917 33.7875 31.2751 33.3625C30.8584 32.9375 30.6501 32.4166 30.6501 31.8C30.6501 31.35 30.7626 30.925 30.9876 30.525C31.2126 30.125 31.4667 29.7333 31.7501 29.35L32.2251 28.75C32.3751 28.5666 32.5709 28.4708 32.8126 28.4625C33.0542 28.4541 33.2501 28.5416 33.4001 28.725L33.9001 29.35C34.1667 29.7333 34.4167 30.125 34.6501 30.525C34.8834 30.925 35.0001 31.35 35.0001 31.8C35.0001 32.4166 34.7834 32.9375 34.3501 33.3625C33.9167 33.7875 33.4001 34 32.8001 34Z" fill="#1C1B1F" />
               </svg>
             </button>
+          </div>
+          <div className='bg-[#f00] h-full grow m-2 relative w-full'>
+            {
+              arts.map((art) => {
+                return (
+                  <Rnd
+                    default={{
+                      x: 150,
+                      y: 205,
+                      width: 500,
+                      height: 190,
+                    }}
+                    minWidth={500}
+                    minHeight={190}
+                    bounds="window"
+                  >
+                    <img src={art} />
+                  </Rnd>
+                )
+              })
+            }
           </div>
           <div className={`transition-all ease-in-out flex flex-col gap-8 bg-[#E1E1E1] p-4 items-center ${getRightSidebarStyle()}`}>
             <button className={`transition-all ease-in-out rounded-md bg-[#FFF] w-8 h-8 inline-flex justify-center items-center ${getRightSidebarIndicatorStyle()}`} onClick={() => setRightSidebarOpen(!rightSidebarOpen)}>
