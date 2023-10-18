@@ -6,7 +6,7 @@ import {
 } from '@chakra-ui/react'
 import { useRef, useState } from 'react'
 import LayerItem from './LayerItem'
-import DraggableList from 'react-draggable-list';
+// import DraggableList from 'react-draggable-list';
 export default function LayerPopover({ style }) {
     const initialFocusRef = useRef()
     const [layers, setLayers] = useState([
@@ -37,13 +37,13 @@ export default function LayerPopover({ style }) {
                         ref={containerRef}
                         style={{ touchAction: "pan-y"}}
                     >
-                        <DraggableList
+                        {/* <DraggableList
                             itemKey="id"
                             template={LayerItem}
                             list={layers}
                             onMoveEnd={(newList) => setLayers(newList)}
                             container={() => containerRef.current}
-                        />
+                        /> */}
                     </div>
                 </PopoverBody>
             </PopoverContent>
