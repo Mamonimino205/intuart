@@ -110,18 +110,10 @@ function App() {
             {
               arts.map((art) => {
                 return (
-                  <Rnd
-                    default={{
-                      x: 150,
-                      y: 205,
-                      width: 500,
-                      height: 190,
-                    }}
-                    minWidth={500}
-                    minHeight={190}
-                    bounds="window"
-                  >
-                    <img src={art.src} />
+                  <Rnd lockAspectRatio={true}>
+                    <div className='border-2 border-[#000] w-full h-full'>
+                      <img src={art.src} className='object-fill' />
+                    </div>
                   </Rnd>
                 )
               })

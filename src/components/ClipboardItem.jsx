@@ -23,7 +23,7 @@ export default function ClipboardItem({ item, onSelected }) {
                     </svg>
                 )
             }
-            <p className="font-bold mt-2 w-full truncate mx-2">{item.name}</p>
+            <p className="font-bold mt-2 w-full truncate mx-2 text-center">{item.name}</p>
         </div>
     )
 }

@@ -4,7 +4,7 @@ import {
     PopoverContent,
     PopoverBody,
 } from '@chakra-ui/react'
-import { useRef, useState } from 'react'
+import { useRef } from 'react'
 import PatternItem from './PatternItem'
 import useDataContext from '../context/useDataContext';
 export default function PatternMakerPopup({ style }) {
